@@ -33,12 +33,14 @@ def transcrever_audio(file_path, client):
         file=audio_file,
         language="pt",
         temperature=0.5,
-        prompt="Transcreva a entrevista, separando as falas dos entrevistados em 'Entrevistador' e 'Gerente'.",
+        # prompt="Transcreva a entrevista, separando as falas dos entrevistados em 'Entrevistador' e 'Entrevistado'.",
+        prompt="Transcreva o áudio.",
     )
     return response.text
 
 def formatar_texto(transcricao, client):
-    prompt = f"Por favor, corrija erros de coerência e gramática e formate o texto a seguir, separando as falas do entrevistador (normalmente quem estará fazendo perguntas) e do gerente do restaurante:\n\n{transcricao}"
+    # prompt = f"Por favor, corrija erros de coerência e gramática e formate o texto a seguir, separando as falas do entrevistador (normalmente quem estará fazendo perguntas) e do gerente do restaurante:\n\n{transcricao}"
+    prompt = f"Por favor, corrija erros de coerência e gramática e formate o texto a seguir:\n\n{transcricao}"
 
     response = client.chat.completions.create(
         model="gpt-4o-mini",
