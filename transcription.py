@@ -43,7 +43,7 @@ def formatar_texto(transcricao, client):
     prompt = f"Por favor, corrija erros de coerência e gramática e formate o texto a seguir:\n\n{transcricao}"
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="o1-2024-12-17",
         messages=[
             {
                 "role": "system",
