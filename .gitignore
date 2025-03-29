@@ -110,3 +110,15 @@ dmypy.json
 
 # Custom additions
 config.ini
+
+# Audio and video files
+*.mp3
+*.m4a
+*.mp4
+*.wav
+
+# Text files
+*.txt
+
+# macOS system files
+.DS_Store
